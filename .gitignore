@@ -1,0 +1,39 @@
+# Entornos virtuales
+venv/
+.env/
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Archivos de configuración de entorno y secretos
+.env
+*.env
+
+# Configuración de herramientas de IDE/Editor
+.vscode/
+.idea/
+*.swp
+
+# Archivos de log
+*.log
+
+# Archivos de bases de datos locales
+*.sqlite3
+
+# Archivos generados por alembic (si no deseas versionar las migraciones)
+alembic/versions/*
+
+# Configuración de Docker y archivos temporales
+docker-compose.yml
+Dockerfile*
+*.pid
+
+# Ignorar archivos de sistema específicos
+.DS_Store
+Thumbs.db
+
+# Ignorar archivo de requirements generado por pip freeze (si se usa para entornos específicos)
+pip-freeze-requirements.txt
