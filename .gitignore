@@ -27,13 +27,8 @@ __pycache__/
 alembic/versions/*
 
 # Configuración de Docker y archivos temporales
-docker-compose.yml
-Dockerfile*
 *.pid
 
 # Ignorar archivos de sistema específicos
 .DS_Store
 Thumbs.db
-
-# Ignorar archivo de requirements generado por pip freeze (si se usa para entornos específicos)
-pip-freeze-requirements.txt
