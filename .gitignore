@@ -23,9 +23,6 @@ __pycache__/
 # Archivos de bases de datos locales
 *.sqlite3
 
-# Archivos generados por alembic (si no deseas versionar las migraciones)
-alembic/versions/*
-
 # Configuración de Docker y archivos temporales
 *.pid
 

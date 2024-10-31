@@ -6,14 +6,14 @@ while ! nc -z db 5432; do
   sleep 1 # Espera un segundo antes de verificar de nuevo
 done
 
-# Verificar si Alembic ya está inicializado (opcional si solo deseas inicializar una vez)
+# Inicializar Alembic si no ha sido inicializado
 if [ ! -d alembic ]; then
   echo "Inicializando Alembic..."
   alembic init alembic
 fi
 
-# Crear una migración inicial solo si no existe
-if [ ! "$(ls -A alembic/versions)" ]; then
+# Crear una migración inicial si no existe
+if [ ! -f alembic/versions/initial_migration.py ]; then
   echo "Creando la migración inicial..."
   alembic revision --autogenerate -m "initial migration"
 fi
