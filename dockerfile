@@ -1,6 +1,9 @@
 # Usar una imagen base de Python
 FROM python:3.12-slim
 
+# Instalar netcat (versión openbsd)
+RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+
 # Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para ejecutar la aplicación
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["./start.sh"]

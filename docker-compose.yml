@@ -11,15 +11,25 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
 
   api:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fastapi_api:v1.0
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
       DATABASE_URL: "postgresql+asyncpg://postgres:postgres@db:5432/residencias"
+    networks:
+      - app-network
 
 volumes:
   postgres_data:
+
+networks:
+  app-network:
