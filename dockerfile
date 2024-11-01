@@ -1,4 +1,3 @@
-# Usar una imagen base de Python
 FROM python:3.12-slim
 
 # Instalar netcat (versión openbsd)
