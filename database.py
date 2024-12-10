@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 # Obtener la URL de la base de datos desde la variable de entorno
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:postgres@localhost:5432/residencias")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql+asyncpg://postgres:q@localhost:5432/system_monitor")
 
 # Crear el motor asíncrono
 engine = create_async_engine(DATABASE_URL, echo=True)

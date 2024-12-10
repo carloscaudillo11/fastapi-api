@@ -10,7 +10,7 @@ if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # Importa los modelos y asigna la metadata
-from models.project_model import Base 
+from app.models.system_info_model import Base 
 target_metadata = Base.metadata
 
 def run_migrations_offline() -> None:

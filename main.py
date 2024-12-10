@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from sqlalchemy.ext.asyncio import AsyncSession
 from database import engine, Base
-from routes.project_route import router as project_router
+from app.routes.system_monitor_route import router as system_monitor_router
 
 app = FastAPI()
 
@@ -13,4 +13,4 @@ async def startup_event():
         await conn.run_sync(Base.metadata.create_all)
 
 # Incluir las rutas de proyectos
-app.include_router(project_router, prefix="/projects", tags=["projects"])
+app.include_router(system_monitor_router, prefix="/system_monitor", tags=["system_monitor"])
